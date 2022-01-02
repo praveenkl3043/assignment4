@@ -1,0 +1,298 @@
+
+1.How to compare two JSON have the same properties without order?
+
+code:
+var obj1 = { name: "Person 1", age:"ten" };
+var obj2 = { age:"ten", name: "Person 1" };
+
+
+var flag=true;
+
+if(Object.keys(obj1).length==Object.keys(obj2).length){
+  for(key in obj1) {
+    if(obj1[key] == obj2[key]) {
+      continue;
+    }
+    else{
+      flag=false;
+      break;
+    }
+  }
+}
+else {
+     flag=false;
+}
+if(flag==true)
+ console.log("true")
+ else
+  console.log("false")             ans:true
+
+
+2.
+
+code:
+var xhr = new XMLHttpRequest();
+xhr.open("GET","http://api.countrylayer.com/v2/all?access_key=ca922065732ffbcd0d9e0dc5f8ffe1ab")
+xhr.onload = function(){
+    
+    let data =JSON.parse(this.response);
+    for(i=0;i<data.length;i++){
+        let user = data[i]
+        console.log(user.name)
+    }
+
+}
+xhr.send();        
+
+
+
+ans:Afghanistan
+index.js:8 Åland Islands
+index.js:8 Albania
+index.js:8 Algeria
+index.js:8 American Samoa
+index.js:8 Andorra
+index.js:8 Angola
+index.js:8 Anguilla
+index.js:8 Antarctica
+index.js:8 Antigua and Barbuda
+index.js:8 Argentina
+index.js:8 Armenia
+index.js:8 Aruba
+index.js:8 Australia
+index.js:8 Austria
+index.js:8 Azerbaijan
+index.js:8 Bahamas
+index.js:8 Bahrain
+index.js:8 Bangladesh
+index.js:8 Barbados
+index.js:8 Belarus
+index.js:8 Belgium
+index.js:8 Belize
+index.js:8 Benin
+index.js:8 Bermuda
+index.js:8 Bhutan
+index.js:8 Bolivia (Plurinational State of)
+index.js:8 Bonaire, Sint Eustatius and Saba
+index.js:8 Bosnia and Herzegovina
+index.js:8 Botswana
+index.js:8 Bouvet Island
+index.js:8 Brazil
+index.js:8 British Indian Ocean Territory
+index.js:8 United States Minor Outlying Islands
+index.js:8 Virgin Islands (British)
+index.js:8 Virgin Islands (U.S.)
+index.js:8 Brunei Darussalam
+index.js:8 Bulgaria
+index.js:8 Burkina Faso
+index.js:8 Burundi
+index.js:8 Cambodia
+index.js:8 Cameroon
+index.js:8 Canada
+index.js:8 Cabo Verde
+index.js:8 Cayman Islands
+index.js:8 Central African Republic
+index.js:8 Chad
+index.js:8 Chile
+index.js:8 China
+index.js:8 Christmas Island
+index.js:8 Cocos (Keeling) Islands
+index.js:8 Colombia
+index.js:8 Comoros
+index.js:8 Congo
+index.js:8 Congo (Democratic Republic of the)
+index.js:8 Cook Islands
+index.js:8 Costa Rica
+index.js:8 Croatia
+index.js:8 Cuba
+index.js:8 Curaçao
+index.js:8 Cyprus
+index.js:8 Czech Republic
+index.js:8 Denmark
+index.js:8 Djibouti
+index.js:8 Dominica
+index.js:8 Dominican Republic
+index.js:8 Ecuador
+index.js:8 Egypt
+index.js:8 El Salvador
+index.js:8 Equatorial Guinea
+index.js:8 Eritrea
+index.js:8 Estonia
+index.js:8 Ethiopia
+index.js:8 Falkland Islands (Malvinas)
+index.js:8 Faroe Islands
+index.js:8 Fiji
+index.js:8 Finland
+index.js:8 France
+index.js:8 French Guiana
+index.js:8 French Polynesia
+index.js:8 French Southern Territories
+index.js:8 Gabon
+index.js:8 Gambia
+index.js:8 Georgia
+index.js:8 Germany
+index.js:8 Ghana
+index.js:8 Gibraltar
+index.js:8 Greece
+index.js:8 Greenland
+index.js:8 Grenada
+index.js:8 Guadeloupe
+index.js:8 Guam
+index.js:8 Guatemala
+index.js:8 Guernsey
+index.js:8 Guinea
+index.js:8 Guinea-Bissau
+index.js:8 Guyana
+index.js:8 Haiti
+index.js:8 Heard Island and McDonald Islands
+index.js:8 Holy See
+index.js:8 Honduras
+index.js:8 Hong Kong
+index.js:8 Hungary
+index.js:8 Iceland
+index.js:8 India
+index.js:8 Indonesia
+index.js:8 Côte d'Ivoire
+index.js:8 Iran (Islamic Republic of)
+index.js:8 Iraq
+index.js:8 Ireland
+index.js:8 Isle of Man
+index.js:8 Israel
+index.js:8 Italy
+index.js:8 Jamaica
+index.js:8 Japan
+index.js:8 Jersey
+index.js:8 Jordan
+index.js:8 Kazakhstan
+index.js:8 Kenya
+index.js:8 Kiribati
+index.js:8 Kuwait
+index.js:8 Kyrgyzstan
+index.js:8 Lao People's Democratic Republic
+index.js:8 Latvia
+index.js:8 Lebanon
+index.js:8 Lesotho
+index.js:8 Liberia
+index.js:8 Libya
+index.js:8 Liechtenstein
+index.js:8 Lithuania
+index.js:8 Luxembourg
+index.js:8 Macao
+index.js:8 Macedonia (the former Yugoslav Republic of)
+index.js:8 Madagascar
+index.js:8 Malawi
+index.js:8 Malaysia
+index.js:8 Maldives
+index.js:8 Mali
+index.js:8 Malta
+index.js:8 Marshall Islands
+index.js:8 Martinique
+index.js:8 Mauritania
+index.js:8 Mauritius
+index.js:8 Mayotte
+index.js:8 Mexico
+index.js:8 Micronesia (Federated States of)
+index.js:8 Moldova (Republic of)
+index.js:8 Monaco
+index.js:8 Mongolia
+index.js:8 Montenegro
+index.js:8 Montserrat
+index.js:8 Morocco
+index.js:8 Mozambique
+index.js:8 Myanmar
+index.js:8 Namibia
+index.js:8 Nauru
+index.js:8 Nepal
+index.js:8 Netherlands
+index.js:8 New Caledonia
+index.js:8 New Zealand
+index.js:8 Nicaragua
+index.js:8 Niger
+index.js:8 Nigeria
+index.js:8 Niue
+index.js:8 Norfolk Island
+index.js:8 Korea (Democratic People's Republic of)
+index.js:8 Northern Mariana Islands
+index.js:8 Norway
+index.js:8 Oman
+index.js:8 Pakistan
+index.js:8 Palau
+index.js:8 Palestine, State of
+index.js:8 Panama
+index.js:8 Papua New Guinea
+index.js:8 Paraguay
+index.js:8 Peru
+index.js:8 Philippines
+index.js:8 Pitcairn
+index.js:8 Poland
+index.js:8 Portugal
+index.js:8 Puerto Rico
+index.js:8 Qatar
+index.js:8 Republic of Kosovo
+index.js:8 Réunion
+index.js:8 Romania
+index.js:8 Russian Federation
+index.js:8 Rwanda
+index.js:8 Saint Barthélemy
+index.js:8 Saint Helena, Ascension and Tristan da Cunha
+index.js:8 Saint Kitts and Nevis
+index.js:8 Saint Lucia
+index.js:8 Saint Martin (French part)
+index.js:8 Saint Pierre and Miquelon
+index.js:8 Saint Vincent and the Grenadines
+index.js:8 Samoa
+index.js:8 San Marino
+index.js:8 Sao Tome and Principe
+index.js:8 Saudi Arabia
+index.js:8 Senegal
+index.js:8 Serbia
+index.js:8 Seychelles
+index.js:8 Sierra Leone
+index.js:8 Singapore
+index.js:8 Sint Maarten (Dutch part)
+index.js:8 Slovakia
+index.js:8 Slovenia
+index.js:8 Solomon Islands
+index.js:8 Somalia
+index.js:8 South Africa
+index.js:8 South Georgia and the South Sandwich Islands
+index.js:8 Korea (Republic of)
+index.js:8 South Sudan
+index.js:8 Spain
+index.js:8 Sri Lanka
+index.js:8 Sudan
+index.js:8 Suriname
+index.js:8 Svalbard and Jan Mayen
+index.js:8 Swaziland
+index.js:8 Sweden
+index.js:8 Switzerland
+index.js:8 Syrian Arab Republic
+index.js:8 Taiwan
+index.js:8 Tajikistan
+index.js:8 Tanzania, United Republic of
+index.js:8 Thailand
+index.js:8 Timor-Leste
+index.js:8 Togo
+index.js:8 Tokelau
+index.js:8 Tonga
+index.js:8 Trinidad and Tobago
+index.js:8 Tunisia
+index.js:8 Turkey
+index.js:8 Turkmenistan
+index.js:8 Turks and Caicos Islands
+index.js:8 Tuvalu
+index.js:8 Uganda
+index.js:8 Ukraine
+index.js:8 United Arab Emirates
+index.js:8 United Kingdom of Great Britain and Northern Ireland
+index.js:8 United States of America
+index.js:8 Uruguay
+index.js:8 Uzbekistan
+index.js:8 Vanuatu
+index.js:8 Venezuela (Bolivarian Republic of)
+index.js:8 Viet Nam
+index.js:8 Wallis and Futuna
+index.js:8 Western Sahara
+index.js:8 Yemen
+index.js:8 Zambia
+index.js:8 Zimbabwe
